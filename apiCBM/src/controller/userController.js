@@ -11,7 +11,7 @@ class UserController {
     // Extrai email e senha do corpo da requisição
     const { email, password } = req.body;
     try {
-      // Obtém todos os usuários do banco de dados
+      // Obtém todos os usuários da base de dados
       const users = await userRepository.getUsers();
       // Encontra o usuário com o email fornecido
       const user = users.find((u) => u.email === email);
@@ -21,7 +21,7 @@ class UserController {
         return res.status(401).json({ message: "Invalid email or password" });
       }
 
-      // Compara a senha fornecida com a senha armazenada no banco de dados
+      // Compara a senha fornecida com a senha armazenada  na base de dados
       const isMatch = await bcrypt.compare(password, user.password);
 
       // Se as senhas não corresponderem, retorna status 401 (Unauthorized) com uma mensagem de erro
@@ -70,7 +70,7 @@ class UserController {
   // Método estático assíncrono para listar todos os usuários
   static async listAllUsers(req, res) {
     try {
-      // Obtém todos os usuários do banco de dados
+      // Obtém todos os usuários da base de dados
       const users = await userRepository.listAllUsers();
       // Retorna os usuários como JSON
       res.json(users);
