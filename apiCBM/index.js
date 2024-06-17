@@ -36,4 +36,5 @@ app.use("/", router);
 // Inicia o servidor Express para escutar as solicitações entrantes na porta especificada e imprime uma mensagem no console quando o servidor estiver pronto para aceitar conexões.
 app.listen(port, () => {
   console.log(`Servidor funcionando! Acesse: http://localhost:${port}`);
+  
 });
