@@ -1,6 +1,7 @@
 // Importa o módulo CBMRepository que contém as funções para interagir com o banco de dados
 const CBMRepository = require("../services/CBMRepository");
 
+
 // Função assíncrona para listar todas as ocorrências
 exports.listAllOccurrences = async (req, res) => {
   try {
